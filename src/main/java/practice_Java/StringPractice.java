@@ -4,6 +4,7 @@ import java.time.format.ResolverStyle;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.Map;
 import java.util.Random;
 
 import org.omg.CORBA.CharHolder;
@@ -18,7 +19,7 @@ public class StringPractice {
 		StringBuffer sbf = new StringBuffer();
 		for (int i = aText.length() - 1; i >= 0; i--) {
 			sbf = sbf.append(aText.charAt(i));
-			 System.out.println(sbf);
+			 //System.out.println(sbf);
 		}
 		System.out.println(sbf);
 	}
@@ -53,17 +54,14 @@ public class StringPractice {
 	
 	//Reverse a String using char array
 	public static void ReverseWord(String aText) {
-		char[] aWord = aText.toCharArray();
-		char[] aNew =new  char[aWord.length];
-		
-		int ln = aWord.length;
-		for(int i =ln-1 ; i>= 0 ; i--)
+		String c = "";
+		for(int i =aText.length()-1 ; i>= 0 ; i--)
 		{
-		
-			String reverse = Arrays.toString(aWord);
-			System.out.println(aWord);
+		c = c+aText.charAt(i);
+			//String reverse = Arrays.toString(aWord);
 			
 		}
+		System.out.println(c);
 		
 	}
 	
@@ -73,12 +71,15 @@ public class StringPractice {
 		char[] aWordArray = aText.toCharArray();
 		for (char c : aWordArray) {
 			if (countMap.containsKey(c)) {
-				countMap.put(c, countMap.get(c)+1);
+				countMap.replace(c,  countMap.get(c),countMap.get(c)+1);
 			}else if (!countMap.containsKey(c)) {
 				countMap.put(c, 1);
 				
 			}
-			System.out.println(countMap.get(c));
+	
+			}
+		for (Character m:countMap.keySet()) {
+			System.out.println(m + "  " + countMap.get(m));
 		}
 		
 	}
@@ -101,9 +102,10 @@ public class StringPractice {
 	public static void main(String[] args) {
 		
 		//reverseStringWithout("Happy");
-		//replace("my", "your", "I love my country . my name is Dev");
+		replace("my", "your", " my I love my country . my name is Dev my name");
 		//countChar("Acnhaojanshfbaiwaajnievpanfnac");
-		System.out.println(randomGenerator(7));
+		//countChar("vowovow");
+		//ReverseWord("DEV");
 	}
 
 }

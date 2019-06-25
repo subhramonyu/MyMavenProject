@@ -4,6 +4,9 @@ import java.util.Scanner;
 
 public class JavaProgram {
 
+	int a =10;
+	
+	
 	public static void printNumberpattern(int NoOfRows) {
 		for (int i = 1; i <= NoOfRows; i++) {
 			for (int j = 1; j <= i; j++) {
@@ -48,13 +51,20 @@ public class JavaProgram {
 		}
 		System.out.println(num1);
 	}
+	
+	public static boolean checkEvenNumber(int num) {
+		boolean[] a = {true , false};
+		
+		return a[num%2];
+	}
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
 		//bothsidePattern(5);
-		addTwoNumberwithoutAddSign(10, 12);
-
+		//addTwoNumberwithoutAddSign(10, 12);
+		
+		System.out.println();
 	}
 
 }
